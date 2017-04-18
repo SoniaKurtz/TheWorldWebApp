@@ -7,6 +7,8 @@
   <ItemGroup>
     <Content Include="wwwroot\css\site.css" />
     <Content Include="wwwroot\css\style.css" />
+    <Content Include="wwwroot\img\1926852_10203654910919828_1138406362_n.jpg" />
+    <Content Include="wwwroot\js\site.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,6 +18,7 @@
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
 	<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+	<PackageReference Include="NUnit" Version="3.6.1" />
   </ItemGroup>
 
 </Project>

@@ -1076,6 +1076,19 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
+      "NUnit/3.6.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.Runtime.Loader": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/nunit.framework.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -4015,6 +4028,35 @@
         "newtonsoft.json.9.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "NUnit/3.6.1": {
+      "sha512": "0FPgTzx3+8HQsQLv85IRXuQVlc53whh1gWQkYL2sqQu7sj9cCiNTgiv0SCTut7lvRX/fXyBIS954VJEjxtL5gw==",
+      "type": "package",
+      "path": "nunit/3.6.1",
+      "files": [
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "lib/MonoAndroid/nunit.framework.dll",
+        "lib/MonoAndroid/nunit.framework.xml",
+        "lib/Xamarin.iOS10/nunit.framework.dll",
+        "lib/Xamarin.iOS10/nunit.framework.xml",
+        "lib/net20/NUnit.System.Linq.dll",
+        "lib/net20/nunit.framework.dll",
+        "lib/net20/nunit.framework.xml",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/netstandard1.6/nunit.framework.dll",
+        "lib/netstandard1.6/nunit.framework.xml",
+        "lib/portable-net45+win8+wp8+wpa81/nunit.framework.dll",
+        "lib/portable-net45+win8+wp8+wpa81/nunit.framework.xml",
+        "nunit.3.6.1.nupkg.sha512",
+        "nunit.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -8789,7 +8831,8 @@
       "Microsoft.ApplicationInsights.AspNetCore >= 2.0.0",
       "Microsoft.AspNetCore >= 1.1.1",
       "Microsoft.AspNetCore.StaticFiles >= 1.1.1",
-      "Microsoft.NETCore.App >= 1.1.1"
+      "Microsoft.NETCore.App >= 1.1.1",
+      "NUnit >= 3.6.1"
     ]
   },
   "packageFolders": {
@@ -8818,6 +8861,10 @@
           "Microsoft.AspNetCore": {
             "target": "Package",
             "version": "1.1.1"
+          },
+          "NUnit": {
+            "target": "Package",
+            "version": "3.6.1"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",

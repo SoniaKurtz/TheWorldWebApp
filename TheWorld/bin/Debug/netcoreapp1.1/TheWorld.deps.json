@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "c040d96904ff8d1f13004076b395b6ed54da6631"
+    "signature": "6eb3f57132c1f624cd186635c1ef09e5e7ae95cb"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,8 @@
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.1",
           "Microsoft.AspNetCore.StaticFiles": "1.1.1",
-          "Microsoft.NETCore.App": "1.1.1"
+          "Microsoft.NETCore.App": "1.1.1",
+          "NUnit": "3.6.1"
         },
         "runtime": {
           "TheWorld.dll": {}
@@ -677,6 +678,18 @@
         },
         "compile": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "nunit/3.6.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Runtime.Loader": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/nunit.framework.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/nunit.framework.dll": {}
         }
       },
       "system.collections.nongeneric/4.3.0": {
@@ -2786,6 +2799,13 @@
       "sha512": "sha512-5JAIUJaNpNA3ULKTdsyFRenZapilzb65Clb8R1u7vPQX7p8UmRmTfbuZwR+NkTZ+uyCPEOgth+app/6Re56EZA==",
       "path": "newtonsoft.json/9.0.1",
       "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
+    },
+    "nunit/3.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0FPgTzx3+8HQsQLv85IRXuQVlc53whh1gWQkYL2sqQu7sj9cCiNTgiv0SCTut7lvRX/fXyBIS954VJEjxtL5gw==",
+      "path": "nunit/3.6.1",
+      "hashPath": "nunit.3.6.1.nupkg.sha512"
     },
     "system.collections.nongeneric/4.3.0": {
       "type": "package",
