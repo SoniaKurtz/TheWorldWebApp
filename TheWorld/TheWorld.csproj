@@ -20,5 +20,6 @@
 	<PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
 	<PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
 	<PackageReference Include="NUnit" Version="3.6.1" />
+	<PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="1.1.2" />
   </ItemGroup>
 </Project>
