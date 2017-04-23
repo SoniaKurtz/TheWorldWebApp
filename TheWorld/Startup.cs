@@ -24,7 +24,7 @@ namespace TheWorld
         {
             loggerFactory.AddConsole();
 
-            if (env.IsDevelopment())
+			if (env.IsEnvironment("Development"))
             {
                 app.UseDeveloperExceptionPage();
             }
