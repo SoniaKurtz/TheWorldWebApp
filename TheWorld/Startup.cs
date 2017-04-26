@@ -9,6 +9,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TheWorld.Services;
 using Microsoft.Extensions.Configuration;
+using TheWorld.Models;
+using Newtonsoft.Json.Serialization;
+using AutoMapper;
+using TheWorld.ViewModels;
 
 namespace TheWorld
 {
@@ -42,19 +46,42 @@ namespace TheWorld
 			{
 				//Implement a real Mail Service
 			}
+			services.AddDbContext<WorldContext>();
 
-			services.AddMvc();
+			services.AddScoped<IWorldRepository, WorldRepository>();
+
+			services.AddTransient<WorldContextSeedData>();
+
+			services.AddMvc()
+				.AddJsonOptions(config =>
+				{
+					config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+				});
+			services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, 
+									IHostingEnvironment env, 
+									ILoggerFactory loggerFactory,
+									WorldContextSeedData seeder)
         {
+			Mapper.Initialize(config =>
+			{
+				config.CreateMap<TripViewModel, Trip>().ReverseMap();
+			});
+
             loggerFactory.AddConsole();
 
 			if (env.IsEnvironment("Development"))
             {
                 app.UseDeveloperExceptionPage();
+				loggerFactory.AddDebug(LogLevel.Information);
             }
+			else
+			{
+				loggerFactory.AddDebug(LogLevel.Error);
+			}
 			app.UseStaticFiles();
 
 			app.UseMvc(config =>
@@ -65,6 +92,8 @@ namespace TheWorld
 					defaults: new { controller = "App", action = "Index" }
 					);
 			});
+
+			seeder.EnsureSeedData().Wait();
         }
     }
 }

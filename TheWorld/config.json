@@ -1,5 +1,8 @@
 {
   "MailSetting": {
-    "ToAddress":  "kurtz@mail.com"
+    "ToAddress": "kurtz@mail.com"
+  },
+  "ConnectionStrings": {
+    "WorldContextConnection" :  "Server=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
   }
 }
